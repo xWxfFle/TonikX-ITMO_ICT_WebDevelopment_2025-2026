@@ -625,34 +625,7 @@
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
-      Диаграмма архитектуры
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      Образовательная ценность
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
       Особенности реализации
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      Выводы
     </span>
   </a>
   
@@ -874,34 +847,7 @@
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
-      Диаграмма архитектуры
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      Образовательная ценность
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
       Особенности реализации
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      Выводы
     </span>
   </a>
   
@@ -1083,39 +1029,7 @@ python<span class="w"> </span>task4_chat.py<span class="w"> </span>demo
 <li>Введите разные никнеймы</li>
 <li>Отправляйте сообщения из разных терминалов</li>
 </ol>
-<h2 id="_13">Диаграмма архитектуры<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>graph TB
-    subgraph &quot;Чат Сервер&quot;
-        S[Socket Server]
-        T1[Thread 1]
-        T2[Thread 2]
-        T3[Thread N]
-        C1[Client 1]
-        C2[Client 2]
-        CN[Client N]
-    end
-
-    S --&gt; T1
-    S --&gt; T2
-    S --&gt; T3
-    T1 --&gt; C1
-    T2 --&gt; C2
-    T3 --&gt; CN
-
-    C1 -.-&gt;|Broadcast| C2
-    C1 -.-&gt;|Broadcast| CN
-    C2 -.-&gt;|Broadcast| C1
-    C2 -.-&gt;|Broadcast| CN
-</code></pre></div>
-<h2 id="_14">Образовательная ценность<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>TCP протокол</strong> - надежная доставка сообщений</li>
-<li><strong>Многопоточность</strong> - параллельная обработка клиентов</li>
-<li><strong>Сетевые приложения</strong> - реальные примеры клиент-сервер архитектуры</li>
-<li><strong>Обработка ошибок</strong> - корректное отключение клиентов</li>
-<li><strong>Синхронизация</strong> - безопасная работа с общими ресурсами</li>
-</ul>
-<h2 id="_15">Особенности реализации<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h2 id="_13">Особенности реализации<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Классовая архитектура</strong> - объектно-ориентированный подход</li>
 <li><strong>Обработка отключений</strong> - автоматическое удаление неактивных клиентов</li>
@@ -1123,11 +1037,6 @@ python<span class="w"> </span>task4_chat.py<span class="w"> </span>demo
 <li><strong>Никнеймы</strong> - идентификация пользователей в чате</li>
 <li><strong>Временные метки</strong> - отображение времени сообщений</li>
 </ul>
-<h2 id="_16">Выводы<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
-<p>Многопользовательский чат демонстрирует сложные концепции сетевого программирования:
-- Многопоточность критична для масштабируемых приложений
-- TCP обеспечивает надежную доставку сообщений
-- Правильная архитектура упрощает добавление новых функций</p>
 
 
 

@@ -594,40 +594,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      В браузере
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      Диаграмма взаимодействия
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Образовательная ценность
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       Особенности реализации
     </span>
@@ -636,7 +609,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       Тестирование
     </span>
@@ -665,15 +638,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      Выводы
-    </span>
-  </a>
   
 </li>
       
@@ -908,40 +872,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      В браузере
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      Диаграмма взаимодействия
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Образовательная ценность
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       Особенности реализации
     </span>
@@ -950,7 +887,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       Тестирование
     </span>
@@ -979,15 +916,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      Выводы
-    </span>
-  </a>
   
 </li>
       
@@ -1140,36 +1068,14 @@ python<span class="w"> </span>task3_http_server.py<span class="w"> </span>demo
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>main.py
 <span class="c1"># Выберите пункт 3</span>
 </code></pre></div>
-<h3 id="_7">В браузере<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Откройте http://localhost:8080/ в браузере</p>
-<h2 id="_8">Диаграмма взаимодействия<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sequenceDiagram
-    participant C as HTTP Клиент
-    participant S as HTTP Сервер
-    participant F as index.html
-
-    C-&gt;&gt;S: GET / HTTP/1.1
-    S-&gt;&gt;F: Чтение файла
-    F--&gt;&gt;S: HTML содержимое
-    S-&gt;&gt;C: HTTP/1.1 200 OK + HTML
-    Note over C: Отображение страницы
-</code></pre></div>
-<h2 id="_9">Образовательная ценность<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>HTTP протокол</strong> - структура запросов и ответов</li>
-<li><strong>Работа с файлами</strong> - чтение HTML файлов</li>
-<li><strong>Парсинг HTTP</strong> - разбор заголовков и методов</li>
-<li><strong>Обработка ошибок</strong> - HTTP коды состояния (200, 404)</li>
-<li><strong>Кодировка</strong> - правильная работа с UTF-8</li>
-</ul>
-<h2 id="_10">Особенности реализации<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_7">Особенности реализации<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Простой HTTP парсер</strong> - разбор основных HTTP методов</li>
 <li><strong>Обработка ошибок</strong> - корректные HTTP коды ответов</li>
 <li><strong>Кодировка UTF-8</strong> - поддержка русского языка</li>
 <li><strong>Заголовки HTTP</strong> - правильное формирование ответов</li>
 </ul>
-<h2 id="_11">Тестирование<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_8">Тестирование<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h3 id="curl">С помощью curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8080/
 </code></pre></div>
@@ -1178,8 +1084,6 @@ python<span class="w"> </span>task3_http_server.py<span class="w"> </span>demo
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:8080/&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="_12">Выводы<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<p>HTTP сервер демонстрирует основы веб-технологий. Понимание структуры HTTP протокола критично для веб-разработки. Простая реализация помогает понять принципы работы современных веб-серверов.</p>
 
 
 

@@ -631,49 +631,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      В браузере
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      Диаграмма архитектуры
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Образовательная ценность
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      Особенности реализации
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       Тестирование
     </span>
@@ -692,7 +656,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       С помощью браузера
     </span>
@@ -702,15 +666,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      Выводы
-    </span>
-  </a>
   
 </li>
       
@@ -890,49 +845,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      В браузере
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      Диаграмма архитектуры
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Образовательная ценность
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      Особенности реализации
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       Тестирование
     </span>
@@ -951,7 +870,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       С помощью браузера
     </span>
@@ -961,15 +880,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      Выводы
-    </span>
-  </a>
   
 </li>
       
@@ -1229,46 +1139,7 @@ python<span class="w"> </span>task5_web_server.py<span class="w"> </span>demo
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>main.py
 <span class="c1"># Выберите пункт 5</span>
 </code></pre></div>
-<h3 id="_7">В браузере<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Откройте http://localhost:8081/ в браузере</p>
-<h2 id="_8">Диаграмма архитектуры<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>graph TB
-    subgraph &quot;Клиент&quot;
-        UI[Веб-интерфейс]
-        FORM[HTML Форма]
-    end
-
-    subgraph &quot;Сервер&quot;
-        WS[Web Server]
-        GET[GET Handler]
-        POST[POST Handler]
-        MEM[(Память)]
-    end
-
-    UI --&gt;|GET /| GET
-    FORM --&gt;|POST /add_grade| POST
-    GET --&gt;|HTML| UI
-    POST --&gt;|JSON| FORM
-    POST --&gt; MEM
-    GET --&gt; MEM
-</code></pre></div>
-<h2 id="_9">Образовательная ценность<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>HTTP методы</strong> - GET для получения данных, POST для создания</li>
-<li><strong>Парсинг HTTP</strong> - разбор заголовков и тела запроса</li>
-<li><strong>Валидация данных</strong> - проверка входных параметров</li>
-<li><strong>HTML генерация</strong> - динамическое создание веб-страниц</li>
-<li><strong>Обработка ошибок</strong> - HTTP коды состояния</li>
-</ul>
-<h2 id="_10">Особенности реализации<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Простой HTTP парсер</strong> - разбор GET и POST запросов</li>
-<li><strong>Валидация данных</strong> - проверка оценок от 1 до 5</li>
-<li><strong>Хранение в памяти</strong> - простое решение без базы данных</li>
-<li><strong>HTML интерфейс</strong> - удобный веб-интерфейс</li>
-<li><strong>Обработка ошибок</strong> - корректные HTTP коды ответов</li>
-</ul>
-<h2 id="_11">Тестирование<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_7">Тестирование<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="curl">С помощью curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Получение страницы с оценками</span>
 curl<span class="w"> </span>http://localhost:8081/
@@ -1277,19 +1148,13 @@ curl<span class="w"> </span>http://localhost:8081/
 curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8081/add_grade<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;discipline=Физика&amp;grade=4&quot;</span>
 </code></pre></div>
-<h3 id="_12">С помощью браузера<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_8">С помощью браузера<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Откройте http://localhost:8081/</li>
 <li>Заполните форму добавления оценки</li>
 <li>Нажмите "Добавить оценку"</li>
 <li>Обновите страницу для просмотра всех оценок</li>
 </ol>
-<h2 id="_13">Выводы<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<p>Задание 5 демонстрирует современные подходы к веб-разработке:
-- HTTP методы обеспечивают RESTful архитектуру
-- Валидация данных критична для безопасности
-- HTML интерфейс создает удобный пользовательский опыт
-- Простая реализация помогает понять основы веб-серверов</p>
 
 
 
