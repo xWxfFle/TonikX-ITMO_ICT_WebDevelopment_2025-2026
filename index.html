@@ -6,27 +6,29 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Практические задания по сетевому программированию в Python">
+        <meta name="description" content="Django проекты - Доска домашних заданий и система управления автовладельцами">
       
       
-        <meta name="author" content="Студент ИТМО">
+        <meta name="author" content="Арсений Филатов">
+      
+      
+        <link rel="canonical" href="https://tonikx-itmo.github.io/ICT_WebDevelopment_2025-2026/">
       
       
       
-      
-        <link rel="next" href="tasks/task1/">
+        <link rel="next" href="homework_board/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Лабораторная работа 1 - Работа с сокетами</title>
+        <title>Лабораторная работа 2</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -65,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#2-django" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Лабораторная работа 1 - Работа с сокетами" class="md-header__button md-logo" aria-label="Лабораторная работа 1 - Работа с сокетами" data-md-component="logo">
+    <a href="." title="Лабораторная работа 2" class="md-header__button md-logo" aria-label="Лабораторная работа 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Лабораторная работа 1 - Работа с сокетами
+            Лабораторная работа 2
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -121,7 +123,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Переключить на темную тему"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Переключить на темную тему"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Переключить на темную тему" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -131,7 +133,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -235,34 +237,15 @@
     
     
       <li class="md-tabs__item">
-        <a href="tasks/task1/" class="md-tabs__link">
+        <a href="homework_board/" class="md-tabs__link">
           
   
   
-  Задания
+  Проекты
 
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="conclusion/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Заключение
-
-      </a>
-    </li>
   
 
       
@@ -288,13 +271,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Лабораторная работа 1 - Работа с сокетами" class="md-nav__button md-logo" aria-label="Лабораторная работа 1 - Работа с сокетами" data-md-component="logo">
+    <a href="." title="Лабораторная работа 2" class="md-nav__button md-logo" aria-label="Лабораторная работа 2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Лабораторная работа 1 - Работа с сокетами
+    Лабораторная работа 2
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -358,68 +341,68 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Обзор
+      📚 Проекты
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Обзор">
+    <nav class="md-nav" aria-label="📚 Проекты">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#homework_board" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Доска домашних заданий (homework_board)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚗 Система управления автовладельцами (tutorial)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Цели работы
+      🛠 Технологии
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Технические требования
+      🚀 Быстрый старт
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Структура заданий
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Запуск программ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Запуск программ">
+    <nav class="md-nav" aria-label="🚀 Быстрый старт">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Главное меню
+      Установка зависимостей
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Отдельные задания
+      Запуск проектов
     </span>
   </a>
   
@@ -427,88 +410,31 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 Структура репозитория
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 Автор
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      Архитектура проекта
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Архитектура проекта">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Файловая структура
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      Архитектурные решения
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      Результаты выполнения
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Результаты выполнения">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      Реализованные функции
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      Изученные концепции
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      Практические навыки
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      Дополнительные материалы
+      📝 Лицензия
     </span>
   </a>
   
@@ -552,7 +478,7 @@
   
   
   <span class="md-ellipsis">
-    Задания
+    Проекты
     
   </span>
   
@@ -563,7 +489,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Задания
+            Проекты
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -574,12 +500,12 @@
   
   
     <li class="md-nav__item">
-      <a href="tasks/task1/" class="md-nav__link">
+      <a href="homework_board/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Задание 1 - UDP Hello
+    Доска домашних заданий
     
   </span>
   
@@ -597,81 +523,12 @@
   
   
     <li class="md-nav__item">
-      <a href="tasks/task2/" class="md-nav__link">
+      <a href="tutorial/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Задание 2 - TCP Математика
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tasks/task3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Задание 3 - HTTP Сервер
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tasks/task4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Задание 4 - Многопользовательский чат
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tasks/task5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Задание 5 - Веб-сервер
+    Система управления автовладельцами
     
   </span>
   
@@ -685,28 +542,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="conclusion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Заключение
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -740,68 +575,68 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Обзор
+      📚 Проекты
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Обзор">
+    <nav class="md-nav" aria-label="📚 Проекты">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#homework_board" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Доска домашних заданий (homework_board)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚗 Система управления автовладельцами (tutorial)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Цели работы
+      🛠 Технологии
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Технические требования
+      🚀 Быстрый старт
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Структура заданий
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Запуск программ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Запуск программ">
+    <nav class="md-nav" aria-label="🚀 Быстрый старт">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Главное меню
+      Установка зависимостей
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Отдельные задания
+      Запуск проектов
     </span>
   </a>
   
@@ -809,88 +644,31 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 Структура репозитория
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 Автор
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      Архитектура проекта
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Архитектура проекта">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Файловая структура
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      Архитектурные решения
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      Результаты выполнения
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Результаты выполнения">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      Реализованные функции
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      Изученные концепции
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      Практические навыки
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      Дополнительные материалы
+      📝 Лицензия
     </span>
   </a>
   
@@ -912,133 +690,76 @@
 
 
 
-<h1 id="1">Лабораторная работа 1: Работа с сокетами<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
-<h2 id="_1">Обзор<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Данный проект представляет собой практическую реализацию пяти заданий по работе с сокетами в Python. Все задания выполнены с использованием стандартной библиотеки Python.</p>
-<h3 id="_2">Цели работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h1 id="2-django">Лабораторная работа 2: Django проекты<a class="headerlink" href="#2-django" title="Permanent link">&para;</a></h1>
+<p>Добро пожаловать в документацию по лабораторной работе 2! Здесь представлены два Django проекта, созданных в рамках курса веб-разработки.</p>
+<h2 id="_1">📚 Проекты<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="homework_board">🎓 Доска домашних заданий (homework_board)<a class="headerlink" href="#homework_board" title="Permanent link">&para;</a></h3>
+<p>Современная веб-система для управления домашними заданиями в учебных заведениях.</p>
+<p><strong>Основные возможности:</strong>
+- Управление заданиями для студентов и преподавателей
+- Система оценок и комментариев
+- Статистика и аналитика
+- Адаптивный дизайн с Bootstrap 5</p>
+<p><a href="homework_board/">Подробнее о проекте →</a></p>
+<h3 id="tutorial">🚗 Система управления автовладельцами (tutorial)<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h3>
+<p>Веб-приложение для управления информацией об автовладельцах, их автомобилях и водительских удостоверениях.</p>
+<p><strong>Основные возможности:</strong>
+- Управление владельцами автомобилей
+- Регистрация автомобилей
+- Отслеживание истории владения
+- Управление водительскими удостоверениями</p>
+<p><a href="tutorial/">Подробнее о проекте →</a></p>
+<h2 id="_2">🛠 Технологии<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Изучение основ сетевого программирования</li>
-<li>Практическое применение библиотеки socket</li>
-<li>Реализация клиент-серверной архитектуры</li>
-<li>Работа с различными протоколами (UDP, TCP, HTTP)</li>
-<li>Освоение многопоточного программирования</li>
+<li><strong>Backend</strong>: Django 5.2.7</li>
+<li><strong>Frontend</strong>: Bootstrap 5, HTML5, CSS3, JavaScript</li>
+<li><strong>База данных</strong>: SQLite</li>
+<li><strong>Язык</strong>: Python 3.12+</li>
 </ul>
-<h3 id="_3">Технические требования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Python 3.8+</li>
-<li>Библиотеки: socket, threading, json, math, urllib.parse</li>
-<li>Протоколы: UDP, TCP, HTTP</li>
-</ul>
-<h2 id="_4">Структура заданий<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Номер</th>
-<th>Протокол</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="tasks/task1/">Задание 1</a></td>
-<td>UDP</td>
-<td>Простой обмен сообщениями</td>
-</tr>
-<tr>
-<td><a href="tasks/task2/">Задание 2</a></td>
-<td>TCP</td>
-<td>Математические вычисления</td>
-</tr>
-<tr>
-<td><a href="tasks/task3/">Задание 3</a></td>
-<td>HTTP</td>
-<td>Веб-сервер с HTML</td>
-</tr>
-<tr>
-<td><a href="tasks/task4/">Задание 4</a></td>
-<td>TCP</td>
-<td>Многопользовательский чат</td>
-</tr>
-<tr>
-<td><a href="tasks/task5/">Задание 5</a></td>
-<td>HTTP</td>
-<td>Веб-приложение с формами</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_5">Запуск программ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="_6">Главное меню<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>main.py
-</code></pre></div>
-<h3 id="_7">Отдельные задания<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Задание 1 - UDP Hello</span>
-python<span class="w"> </span>task1_udp_hello.py<span class="w"> </span><span class="o">[</span>server<span class="p">|</span>client<span class="p">|</span>demo<span class="o">]</span>
-
-<span class="c1"># Задание 2 - TCP математические операции</span>
-python<span class="w"> </span>task2_tcp_math.py<span class="w"> </span><span class="o">[</span>server<span class="p">|</span>client<span class="p">|</span>demo<span class="o">]</span>
-
-<span class="c1"># Задание 3 - HTTP сервер</span>
-python<span class="w"> </span>task3_http_server.py<span class="w"> </span><span class="o">[</span>server<span class="p">|</span>client<span class="p">|</span>demo<span class="o">]</span>
-
-<span class="c1"># Задание 4 - Многопользовательский чат</span>
-python<span class="w"> </span>task4_chat.py<span class="w"> </span><span class="o">[</span>server<span class="p">|</span>client<span class="p">|</span>demo<span class="o">]</span>
-
-<span class="c1"># Задание 5 - Веб-сервер для оценок</span>
-python<span class="w"> </span>task5_web_server.py
-</code></pre></div>
-<h2 id="_8">Архитектура проекта<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">Файловая структура<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>.
-├── main.py                 # Главное меню приложения
-├── task1_udp_hello.py     # Задание 1: UDP Hello
-├── task2_tcp_math.py      # Задание 2: TCP математика
-├── task3_http_server.py   # Задание 3: HTTP сервер
-├── task4_chat.py          # Задание 4: Чат
-├── task5_web_server.py    # Задание 5: Веб-сервер
-├── index.html             # HTML страница для задания 3
-└── docs/                  # Документация
-    ├── index.md           # Главная страница
-    ├── tasks/             # Описание заданий
-    └── conclusion.md      # Заключение
-</code></pre></div>
-<h3 id="_10">Архитектурные решения<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Модульная структура - каждое задание в отдельном файле</li>
-<li>Единообразный интерфейс запуска (server/client/demo)</li>
-<li>Обработка ошибок и исключений</li>
-<li>Детальное логирование процессов</li>
-</ul>
-<h2 id="_11">Результаты выполнения<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<h3 id="_12">Реализованные функции<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<ul>
-<li>UDP клиент-сервер с обменом сообщениями</li>
-<li>TCP сервер для математических вычислений</li>
-<li>HTTP сервер с поддержкой GET запросов</li>
-<li>Многопользовательский чат с поддержкой threading</li>
-<li>Веб-приложение для работы с оценками (GET/POST)</li>
-</ul>
-<h3 id="_13">Изученные концепции<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Основы сетевого программирования</li>
-<li>Различия между UDP и TCP протоколами</li>
-<li>Структура HTTP запросов и ответов</li>
-<li>Многопоточное программирование</li>
-<li>Архитектура клиент-сервер</li>
-</ul>
-<h3 id="_14">Практические навыки<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Создание сетевых соединений</li>
-<li>Обработка данных в различных форматах</li>
-<li>Работа с потоками (threading)</li>
-<li>Разработка простых веб-приложений</li>
-<li>Отладка сетевых приложений</li>
-</ul>
-<h2 id="_15">Дополнительные материалы<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://docs.python.org/3/library/socket.html">Документация Python socket</a></li>
-<li><a href="https://docs.python.org/3/library/threading.html">Руководство по threading</a></li>
-<li><a href="https://tools.ietf.org/html/rfc2616">HTTP/1.1 спецификация</a></li>
-</ul>
+<h2 id="_3">🚀 Быстрый старт<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Установка зависимостей<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Для homework_board</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>homework_board
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>homework-env
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">source</span><span class="w"> </span>homework-env/bin/activate<span class="w">  </span><span class="c1"># Linux/Mac</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>django
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Для tutorial</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">cd</span><span class="w"> </span>tutorial
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>tutorial-env
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">source</span><span class="w"> </span>tutorial-env/bin/activate<span class="w">  </span><span class="c1"># Linux/Mac</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>pip<span class="w"> </span>install<span class="w"> </span>django
+</span></code></pre></div>
+<h3 id="_5">Запуск проектов<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># homework_board</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>homework_board
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># tutorial</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">cd</span><span class="w"> </span>tutorial
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</span></code></pre></div>
+<h2 id="_6">📖 Структура репозитория<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>├── homework_board/          # Проект доски домашних заданий
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│   ├── assignments/         # Основное приложение
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── templates/           # HTML шаблоны
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── static/             # Статические файлы
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   └── manage.py           # Управление Django
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├── tutorial/               # Проект управления автовладельцами
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── project_first_app/  # Основное приложение
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   ├── templates/          # HTML шаблоны
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   └── manage.py           # Управление Django
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>├── docs/                   # Документация MkDocs
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>└── mkdocs.yml             # Конфигурация MkDocs
+</span></code></pre></div>
+<h2 id="_7">👨‍💻 Автор<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>Арсений Филатов</strong> - студент курса веб-разработки</p>
+<h2 id="_8">📝 Лицензия<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Этот проект распространяется под лицензией MIT. См. файл <a href="../LICENSE">LICENSE</a> для подробностей.</p>
+<hr />
+<p><em>Документация создана с помощью <a href="https://www.mkdocs.org/">MkDocs</a> и <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></em></p>
 
 
 
@@ -1046,6 +767,38 @@ python<span class="w"> </span>task5_web_server.py
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Последнее обновление">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 октября 2025 г. 22:44:16 UTC">9 октября 2025 г.</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Дата создания">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 октября 2025 г. 22:44:16 UTC">9 октября 2025 г.</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -1093,7 +846,7 @@ python<span class="w"> </span>task5_web_server.py
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
