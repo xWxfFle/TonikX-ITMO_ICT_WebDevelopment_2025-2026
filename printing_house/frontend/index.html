@@ -1,0 +1,2191 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация для практического задания 3.2 по Django REST Framework">
+      
+      
+        <meta name="author" content="Арсений Филатов">
+      
+      
+      
+        <link rel="prev" href="../examples/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Frontend приложение - Django REST Framework API Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#frontend-vuejs" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Django REST Framework API Documentation" class="md-header__button md-logo" aria-label="Django REST Framework API Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Django REST Framework API Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frontend приложение
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  О warriors API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/overview/" class="md-tabs__link">
+          
+  
+  
+  Warriors API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Printing House API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../deployment.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Развертывание
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Django REST Framework API Documentation" class="md-nav__button md-logo" aria-label="Django REST Framework API Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Django REST Framework API Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Главная
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    О warriors API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Warriors API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Warriors API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Обзор API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Модели данных
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Printing House API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Printing House API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Обзор
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Модели данных
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Примеры использования
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Frontend приложение
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frontend приложение
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Технологии
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Структура проекта
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Установка и запуск
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Установка и запуск">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Требования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Установка зависимостей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Запуск в режиме разработки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сборка для production
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Проверка типов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Линтинг
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Архитектура приложения
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Архитектура приложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Компоненты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Компоненты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Главный компонент (App.vue)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Страницы (Views)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сервисы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сервисы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-service-servicesapits" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Service (services/api.ts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Управление состоянием (Pinia)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление состоянием (Pinia)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth-store-storesauthts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auth Store (stores/auth.ts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vue-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Маршрутизация (Vue Router)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Маршрутизация (Vue Router)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Защищенные маршруты
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы (TypeScript)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Аутентификация
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Процесс входа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Хранение токена
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обработка истечения токена
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uiux" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI/UX особенности
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI/UX особенности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vuetify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vuetify компоненты
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Валидация форм
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обработка ошибок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пагинация
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Интеграция с API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интеграция с API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовый URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Заголовки запросов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обработка ответов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры использования
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры использования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание газеты
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Просмотр отчета о типографиях
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Редактирование профиля
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Смена пароля
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разработка
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Разработка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Структура компонентов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Стили
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Линтинг
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сборка и деплой
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сборка и деплой">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production сборка
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preview сборки
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные материалы
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Развертывание
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Технологии
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Структура проекта
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Установка и запуск
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Установка и запуск">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Требования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Установка зависимостей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Запуск в режиме разработки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сборка для production
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Проверка типов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Линтинг
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Архитектура приложения
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Архитектура приложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Компоненты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Компоненты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Главный компонент (App.vue)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Страницы (Views)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сервисы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сервисы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-service-servicesapits" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Service (services/api.ts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Управление состоянием (Pinia)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Управление состоянием (Pinia)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth-store-storesauthts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auth Store (stores/auth.ts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vue-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Маршрутизация (Vue Router)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Маршрутизация (Vue Router)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Защищенные маршруты
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы (TypeScript)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Аутентификация
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Процесс входа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Хранение токена
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обработка истечения токена
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uiux" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI/UX особенности
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI/UX особенности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vuetify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vuetify компоненты
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Валидация форм
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обработка ошибок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пагинация
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Интеграция с API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интеграция с API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовый URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Заголовки запросов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обработка ответов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры использования
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры использования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание газеты
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Просмотр отчета о типографиях
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Редактирование профиля
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Смена пароля
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разработка
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Разработка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Структура компонентов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Стили
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Линтинг
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сборка и деплой
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сборка и деплой">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production сборка
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preview сборки
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные материалы
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="frontend-vuejs">Frontend - Vue.js приложение</h1>
+<h2 id="_1">Описание</h2>
+<p>Frontend часть системы Printing House представляет собой современное одностраничное приложение (SPA), построенное на Vue.js 3 с использованием TypeScript и Vuetify для создания пользовательского интерфейса.</p>
+<h2 id="_2">Технологии</h2>
+<ul>
+<li><strong>Vue.js 3.5.25</strong> - прогрессивный JavaScript фреймворк</li>
+<li><strong>TypeScript 5.9.0</strong> - типизированный JavaScript</li>
+<li><strong>Vuetify 3.11.2</strong> - Material Design компоненты для Vue</li>
+<li><strong>Vue Router 4.6.3</strong> - маршрутизация</li>
+<li><strong>Pinia 3.0.4</strong> - управление состоянием</li>
+<li><strong>Axios 1.13.2</strong> - HTTP клиент</li>
+<li><strong>Vite 7.2.4</strong> - сборщик и dev-сервер</li>
+<li><strong>@mdi/font 7.4.47</strong> - Material Design Icons</li>
+</ul>
+<h2 id="_3">Структура проекта</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lab-4/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── src/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── App.vue                 # Главный компонент приложения
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── main.ts                 # Точка входа
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── plugins/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   │   └── vuetify.ts         # Конфигурация Vuetify
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── router/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   │   └── index.ts           # Конфигурация маршрутизации
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── services/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   │   └── api.ts             # Сервис для работы с API
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   ├── stores/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   │   └── auth.ts            # Store для аутентификации
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   ├── types/
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   │   └── index.ts           # TypeScript типы
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   └── views/
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│       ├── HomeView.vue       # Главная страница (дашборд)
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│       ├── LoginView.vue      # Страница входа
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│       ├── RegisterView.vue   # Страница регистрации
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│       ├── ProfileView.vue    # Страница профиля
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│       ├── NewspapersView.vue # Управление газетами
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│       ├── PrintingHousesView.vue # Управление типографиями
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│       ├── PostOfficesView.vue   # Управление почтовыми отделениями
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│       └── DistributionsView.vue # Управление распределениями
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>├── package.json
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>├── vite.config.ts
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>└── tsconfig.json
+</code></pre></div>
+<h2 id="_4">Установка и запуск</h2>
+<h3 id="_5">Требования</h3>
+<ul>
+<li>Node.js версии 20.19.0 или выше (или 22.12.0+)</li>
+<li>pnpm 10.17.1+</li>
+</ul>
+<h3 id="_6">Установка зависимостей</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>lab-4
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pnpm<span class="w"> </span>install
+</code></pre></div>
+<h3 id="_7">Запуск в режиме разработки</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pnpm<span class="w"> </span>dev
+</code></pre></div>
+<p>Приложение будет доступно по адресу: <code>http://localhost:5173</code></p>
+<h3 id="production">Сборка для production</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pnpm<span class="w"> </span>build
+</code></pre></div>
+<h3 id="_8">Проверка типов</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pnpm<span class="w"> </span>type-check
+</code></pre></div>
+<h3 id="_9">Линтинг</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pnpm<span class="w"> </span>lint
+</code></pre></div>
+<h2 id="_10">Архитектура приложения</h2>
+<h3 id="_11">Компоненты</h3>
+<h4 id="appvue">Главный компонент (App.vue)</h4>
+<p>Главный компонент приложения содержит:
+- Навигационную панель с меню
+- Боковое меню для быстрого доступа к разделам
+- Роутер для отображения страниц</p>
+<h4 id="views">Страницы (Views)</h4>
+<ol>
+<li><strong>HomeView</strong> - Главная страница с дашбордом</li>
+<li>Статистика по всем сущностям</li>
+<li>Быстрые ссылки на создание</li>
+<li>
+<p>Отчет о работе типографий</p>
+</li>
+<li>
+<p><strong>LoginView</strong> - Страница входа</p>
+</li>
+<li>Форма авторизации</li>
+<li>Валидация полей</li>
+<li>
+<p>Обработка ошибок</p>
+</li>
+<li>
+<p><strong>RegisterView</strong> - Страница регистрации</p>
+</li>
+<li>Форма регистрации с подтверждением пароля</li>
+<li>Валидация</li>
+<li>
+<p>Автоматический вход после регистрации</p>
+</li>
+<li>
+<p><strong>ProfileView</strong> - Страница профиля</p>
+</li>
+<li>Вкладка "Личные данные" - редактирование username и email</li>
+<li>
+<p>Вкладка "Смена пароля" - изменение пароля</p>
+</li>
+<li>
+<p><strong>NewspapersView</strong> - Управление газетами</p>
+</li>
+<li>Таблица со списком газет</li>
+<li>Создание/редактирование/удаление</li>
+<li>
+<p>Просмотр деталей с тиражами</p>
+</li>
+<li>
+<p><strong>PrintingHousesView</strong> - Управление типографиями</p>
+</li>
+<li>Таблица со списком типографий</li>
+<li>Создание/редактирование/удаление</li>
+<li>
+<p>Просмотр деталей с тиражами</p>
+</li>
+<li>
+<p><strong>PostOfficesView</strong> - Управление почтовыми отделениями</p>
+</li>
+<li>Таблица со списком почтовых отделений</li>
+<li>Создание/редактирование/удаление</li>
+<li>
+<p>Просмотр деталей с распределениями</p>
+</li>
+<li>
+<p><strong>DistributionsView</strong> - Управление распределениями</p>
+</li>
+<li>Таблица со списком распределений</li>
+<li>Создание/редактирование/удаление</li>
+<li>Выбор из существующих газет, типографий и почтовых отделений</li>
+</ol>
+<h3 id="_12">Сервисы</h3>
+<h4 id="api-service-servicesapits">API Service (services/api.ts)</h4>
+<p>Централизованный сервис для работы с API:</p>
+<ul>
+<li><strong>Аутентификация:</strong></li>
+<li><code>login()</code> - вход в систему</li>
+<li><code>register()</code> - регистрация</li>
+<li><code>getCurrentUser()</code> - получение данных пользователя</li>
+<li><code>updateUser()</code> - обновление профиля</li>
+<li>
+<p><code>changePassword()</code> - смена пароля</p>
+</li>
+<li>
+<p><strong>Газеты:</strong></p>
+</li>
+<li><code>getNewspapers()</code> - список газет</li>
+<li><code>getNewspaper()</code> - детали газеты</li>
+<li><code>createNewspaper()</code> - создание</li>
+<li><code>updateNewspaper()</code> - обновление</li>
+<li><code>deleteNewspaper()</code> - удаление</li>
+<li><code>getNewspaperFullDetail()</code> - детали с вложенными объектами</li>
+<li><code>getNewspapersByName()</code> - поиск по имени</li>
+<li>
+<p><code>getNewspaperInfo()</code> - справка об индексе и цене</p>
+</li>
+<li>
+<p><strong>Типографии:</strong></p>
+</li>
+<li><code>getPrintingHouses()</code> - список типографий</li>
+<li><code>getPrintingHouse()</code> - детали типографии</li>
+<li><code>createPrintingHouse()</code> - создание</li>
+<li><code>updatePrintingHouse()</code> - обновление</li>
+<li><code>deletePrintingHouse()</code> - удаление</li>
+<li><code>getPrintingHouseFullDetail()</code> - детали с тиражами</li>
+<li><code>getLargestCirculationEditor()</code> - редактор с самым большим тиражом</li>
+<li>
+<p><code>getPrintingHousesReport()</code> - отчет о работе типографий</p>
+</li>
+<li>
+<p><strong>Почтовые отделения:</strong></p>
+</li>
+<li><code>getPostOffices()</code> - список почтовых отделений</li>
+<li><code>getPostOffice()</code> - детали почтового отделения</li>
+<li><code>createPostOffice()</code> - создание</li>
+<li><code>updatePostOffice()</code> - обновление</li>
+<li><code>deletePostOffice()</code> - удаление</li>
+<li><code>getPostOfficeFullDetail()</code> - детали с распределениями</li>
+<li><code>getPostOfficesByPrice()</code> - поиск по цене</li>
+<li>
+<p><code>getPostOfficesLowQuantity()</code> - поиск по количеству</p>
+</li>
+<li>
+<p><strong>Распределения:</strong></p>
+</li>
+<li><code>getDistributions()</code> - список распределений</li>
+<li><code>getDistribution()</code> - детали распределения</li>
+<li><code>createDistribution()</code> - создание</li>
+<li><code>updateDistribution()</code> - обновление</li>
+<li><code>deleteDistribution()</code> - удаление</li>
+<li><code>getDistributionByNewspaperAndAddress()</code> - поиск по газете и адресу</li>
+</ul>
+<p><strong>Особенности:</strong>
+- Автоматическое добавление токена авторизации к каждому запросу
+- Обработка ошибок 401 (неавторизован) с автоматическим редиректом на страницу входа
+- Централизованная обработка ошибок</p>
+<h3 id="pinia">Управление состоянием (Pinia)</h3>
+<h4 id="auth-store-storesauthts">Auth Store (stores/auth.ts)</h4>
+<p>Управление состоянием аутентификации:</p>
+<ul>
+<li><code>user</code> - данные текущего пользователя</li>
+<li><code>token</code> - токен авторизации</li>
+<li><code>loading</code> - состояние загрузки</li>
+<li><code>error</code> - ошибки</li>
+<li><code>isAuthenticated</code> - вычисляемое свойство (computed) для проверки авторизации</li>
+</ul>
+<p><strong>Методы:</strong>
+- <code>init()</code> - инициализация (проверка токена при загрузке)
+- <code>login()</code> - вход в систему
+- <code>register()</code> - регистрация
+- <code>updateProfile()</code> - обновление профиля
+- <code>changePassword()</code> - смена пароля
+- <code>logout()</code> - выход из системы</p>
+<h3 id="vue-router">Маршрутизация (Vue Router)</h3>
+<h4 id="_13">Защищенные маршруты</h4>
+<p>Все маршруты, кроме <code>/login</code> и <code>/register</code>, требуют аутентификации.</p>
+<p><strong>Маршруты:</strong>
+- <code>/</code> - главная страница (дашборд)
+- <code>/login</code> - страница входа
+- <code>/register</code> - страница регистрации
+- <code>/profile</code> - профиль пользователя
+- <code>/newspapers</code> - управление газетами
+- <code>/printing-houses</code> - управление типографиями
+- <code>/post-offices</code> - управление почтовыми отделениями
+- <code>/distributions</code> - управление распределениями</p>
+<p><strong>Защита маршрутов:</strong>
+- Автоматический редирект на <code>/login</code> для неавторизованных пользователей
+- Автоматический редирект на главную для авторизованных пользователей, пытающихся зайти на <code>/login</code> или <code>/register</code></p>
+<h3 id="typescript">Типы (TypeScript)</h3>
+<p>Все типы определены в <code>src/types/index.ts</code>:</p>
+<ul>
+<li><code>Newspaper</code> - газета</li>
+<li><code>PrintingHouse</code> - типография</li>
+<li><code>PostOffice</code> - почтовое отделение</li>
+<li><code>Distribution</code> - распределение</li>
+<li><code>NewspaperFullDetail</code> - газета с вложенными объектами</li>
+<li><code>PrintingHouseFullDetail</code> - типография с тиражами</li>
+<li><code>PostOfficeFullDetail</code> - почтовое отделение с распределениями</li>
+<li><code>NewspaperForm</code>, <code>PrintingHouseForm</code>, <code>PostOfficeForm</code>, <code>DistributionForm</code> - типы для форм</li>
+<li><code>PaginatedResponse&lt;T&gt;</code> - тип для пагинированных ответов</li>
+<li><code>TableOptions</code> - опции для таблиц</li>
+<li><code>ValidationRule</code> - правила валидации</li>
+</ul>
+<h2 id="_14">Аутентификация</h2>
+<h3 id="_15">Процесс входа</h3>
+<ol>
+<li>Пользователь вводит username и password</li>
+<li>Отправляется запрос на <code>/auth/token/login/</code></li>
+<li>При успехе токен сохраняется в <code>localStorage</code></li>
+<li>Загружаются данные пользователя через <code>/auth/users/me/</code></li>
+<li>Происходит редирект на главную страницу</li>
+</ol>
+<h3 id="_16">Хранение токена</h3>
+<p>Токен хранится в <code>localStorage</code> под ключом <code>auth_token</code> и автоматически добавляется к каждому API запросу в заголовке <code>Authorization: Token &lt;токен&gt;</code>.</p>
+<h3 id="_17">Обработка истечения токена</h3>
+<p>При получении ответа 401 (Unauthorized):
+1. Токен удаляется из <code>localStorage</code>
+2. Пользователь перенаправляется на страницу входа
+3. Состояние аутентификации сбрасывается</p>
+<h2 id="uiux">UI/UX особенности</h2>
+<h3 id="vuetify">Vuetify компоненты</h3>
+<p>Приложение использует Material Design компоненты из Vuetify:</p>
+<ul>
+<li><strong>v-data-table</strong> - таблицы с пагинацией и сортировкой</li>
+<li><strong>v-dialog</strong> - модальные окна для создания/редактирования</li>
+<li><strong>v-form</strong> - формы с валидацией</li>
+<li><strong>v-text-field</strong>, <strong>v-select</strong> - поля ввода</li>
+<li><strong>v-btn</strong> - кнопки</li>
+<li><strong>v-card</strong> - карточки для отображения информации</li>
+<li><strong>v-chip</strong> - чипы для статусов</li>
+<li><strong>v-alert</strong> - уведомления об ошибках и успехе</li>
+</ul>
+<h3 id="_18">Валидация форм</h3>
+<p>Все формы имеют клиентскую валидацию:
+- Обязательные поля
+- Проверка типов данных
+- Проверка диапазонов значений
+- Проверка совпадения паролей</p>
+<h3 id="_19">Обработка ошибок</h3>
+<ul>
+<li>Отображение ошибок валидации под полями</li>
+<li>Глобальные уведомления об ошибках API</li>
+<li>Уведомления об успешных операциях</li>
+</ul>
+<h3 id="_20">Пагинация</h3>
+<p>Все таблицы поддерживают серверную пагинацию:
+- По умолчанию 20 элементов на странице
+- Навигация по страницам
+- Отображение общего количества элементов</p>
+<h2 id="api">Интеграция с API</h2>
+<h3 id="url">Базовый URL</h3>
+<p>По умолчанию API находится по адресу: <code>http://localhost:8000</code></p>
+<h3 id="_21">Заголовки запросов</h3>
+<p>Все запросы к API включают:
+- <code>Content-Type: application/json</code>
+- <code>Authorization: Token &lt;токен&gt;</code> (для авторизованных запросов)</p>
+<h3 id="_22">Обработка ответов</h3>
+<ul>
+<li>Успешные ответы обрабатываются и отображаются в UI</li>
+<li>Ошибки валидации отображаются под соответствующими полями</li>
+<li>Ошибки сервера отображаются в виде уведомлений</li>
+</ul>
+<h2 id="_23">Примеры использования</h2>
+<h3 id="_24">Создание газеты</h3>
+<ol>
+<li>Перейти на страницу "Газеты"</li>
+<li>Нажать кнопку "Создать газету"</li>
+<li>Заполнить форму:</li>
+<li>Название</li>
+<li>Индекс издания</li>
+<li>Имя, фамилия, отчество редактора</li>
+<li>Цена за экземпляр</li>
+<li>Нажать "Сохранить"</li>
+<li>Газета появится в таблице</li>
+</ol>
+<h3 id="_25">Просмотр отчета о типографиях</h3>
+<ol>
+<li>Перейти на главную страницу</li>
+<li>В разделе "Отчеты" нажать "Отчет о работе типографий"</li>
+<li>Откроется список активных типографий с детальной информацией:</li>
+<li>Количество газет</li>
+<li>Тираж каждой газеты</li>
+<li>Распределение по почтовым отделениям</li>
+</ol>
+<h3 id="_26">Редактирование профиля</h3>
+<ol>
+<li>Нажать на иконку профиля в правом верхнем углу</li>
+<li>Перейти на вкладку "Личные данные"</li>
+<li>Изменить username или email</li>
+<li>Нажать "Сохранить изменения"</li>
+</ol>
+<h3 id="_27">Смена пароля</h3>
+<ol>
+<li>Перейти в профиль</li>
+<li>Перейти на вкладку "Смена пароля"</li>
+<li>Ввести текущий пароль</li>
+<li>Ввести новый пароль и подтверждение</li>
+<li>Нажать "Изменить пароль"</li>
+</ol>
+<h2 id="_28">Разработка</h2>
+<h3 id="_29">Структура компонентов</h3>
+<p>Каждый компонент страницы следует единой структуре:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="cm">&lt;!-- Разметка --&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ts&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">// Импорты</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1">// Типы</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1">// Состояние (ref, reactive)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">// Вычисляемые свойства (computed)</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1">// Методы</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">// Хуки жизненного цикла (onMounted)</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="_30">Стили</h3>
+<p>Приложение использует стили Vuetify по умолчанию с возможностью кастомизации через тему.</p>
+<h3 id="_31">Линтинг</h3>
+<p>Проект использует ESLint с правилами для Vue и TypeScript. Для исправления ошибок:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pnpm<span class="w"> </span>lint
+</code></pre></div>
+<h2 id="_32">Сборка и деплой</h2>
+<h3 id="production_1">Production сборка</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pnpm<span class="w"> </span>build
+</code></pre></div>
+<p>Собранные файлы будут в папке <code>dist/</code>.</p>
+<h3 id="preview">Preview сборки</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pnpm<span class="w"> </span>preview
+</code></pre></div>
+<p>Позволяет просмотреть production сборку локально.</p>
+<h2 id="_33">Дополнительные материалы</h2>
+<ul>
+<li><a href="https://vuejs.org/">Vue.js документация</a></li>
+<li><a href="https://vuetifyjs.com/">Vuetify документация</a></li>
+<li><a href="https://router.vuejs.org/">Vue Router документация</a></li>
+<li><a href="https://pinia.vuejs.org/">Pinia документация</a></li>
+<li><a href="https://www.typescriptlang.org/">TypeScript документация</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
